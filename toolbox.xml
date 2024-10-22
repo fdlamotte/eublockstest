@@ -3,6 +3,7 @@
  <block type="import_Pybricks"></block>
  <block type="Hub_init"></block>
  <block type="Motor_init"></block>
+<!--
  <block type="Motor_run">
     <value name="time">
 		<shadow type="inline_text">
@@ -17,4 +18,5 @@
 		</shadow>
     </value>
   </block>
+-->
 </category>
