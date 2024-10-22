@@ -1,12 +1,20 @@
-<category name="DriveBit" colour="#c51a4a" css-icon="customIcon fad fa-car">
-<label text="DriveBit" web-class="myLabelStyle"></label>
- <block type="import_DriveBit"></block>
- <block type="DriveBit_init"></block>
- <block type="DriveBit_direction">
-    <value name="NAME">
-        <shadow type="sliderinlinerobot">
-        </shadow>
+<category name="PyBricks" colour="#c51a4a" css-icon="customIcon fad fa-car">
+<label text="PyBricks" web-class="myLabelStyle"></label>
+ <block type="import_Pybricks"></block>
+ <block type="Hub_init"></block>
+ <block type="Motor_init"></block>
+ <block type="Motor_run">
+    <value name="time">
+		<shadow type="inline_text">
+			<field name="value">0</field>
+		</shadow>
     </value>
   </block>
-  <block type="DriveBit_stop"></block>
+ <block type="Wait">
+    <value name="time">
+		<shadow type="inline_text">
+			<field name="value">0</field>
+		</shadow>
+    </value>
+  </block>
 </category>

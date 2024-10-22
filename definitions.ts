@@ -1,38 +1,48 @@
-Blockly.Blocks['import_DriveBit'] = {
+Blockly.Blocks['import_Pybricks'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("from DriveBit import *");
+          .appendField("from Pybricks.hubs import MoveHub");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour("#c51a4a");
-      this.setTooltip("Imports DriveBit library.");
+      this.setTooltip("Imports Pybricks library.");
       this.setHelpUrl("");
     }
 };
 
-Blockly.Blocks['DriveBit_init'] = {
+Blockly.Blocks['Hub_init'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldVariable("robot"), "robot")
-        .appendField(" = DriveBit()");
+        .appendField(new Blockly.FieldVariable("hub"), "hub")
+        .appendField(" = MoveHub()");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour("#c51a4a");
-  this.setTooltip("Initialise DriveBit");
+  this.setTooltip("Initialise MoveHub");
   this.setHelpUrl("");
   }
 };
 
-Blockly.Blocks['DriveBit_direction'] = {
+Blockly.Blocks['Motor_init'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldVariable("robot"), "robot")
-        .appendField(".motor.")
-        .appendField(new Blockly.FieldDropdown([["one","one"], ["two","two"]]), "motor")
-        .appendField(".")
-        .appendField(new Blockly.FieldDropdown([["forward","forward"], ["backward","backward"]]), "direction")
+        .appendField(new Blockly.FieldVariable("motor"), "motor")
+        .appendField(" = Motor()");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("#c51a4a");
+  this.setTooltip("Initialise Motor");
+  this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['Motor_run'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldVariable("motor"), "motor")
+        .appendField(".run")
         .appendField("(");
-    this.appendValueInput("NAME")
+    this.appendValueInput("time")
         .setCheck(null);
     this.appendDummyInput()
         .appendField(")");
@@ -45,31 +55,20 @@ Blockly.Blocks['DriveBit_direction'] = {
   }
 };
 
-Blockly.Blocks['DriveBit_stop'] = {
+Blockly.Blocks['wait'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldVariable("robot"), "robot")
-        .appendField(".motor.")
-        .appendField(new Blockly.FieldDropdown([["one","one"], ["two","two"]]), "motor")
-        .appendField(".stop()");
+        .appendField("wait")
+        .appendField("(");
+    this.appendValueInput("time")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(")");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour("#c51a4a");
   this.setTooltip("");
   this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['sliderinlinerobot'] = {
-  init: function() {
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldSlider("1023", "0", "1023", "1", "1", "Speed"), 'slider');
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setOutputShape(Blockly.OUTPUT_SHAPE_ROUND);
-    this.setColour("#FFFFFF", "#FFFFFF", "#FFFFFF");
-    this.setTooltip("Slider input for inline input");
-    this.setHelpUrl("");
   }
 };

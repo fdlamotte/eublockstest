@@ -1,37 +1,30 @@
-Blockly.Python['import_DriveBit'] = function(block) {
-    var code = 'from DriveBit import *\n';
+Blockly.Python['import_Pybricks'] = function(block) {
+    var code = '';
+	code += 'from pybricks.hubs import MoveHub\n';
+	code += 'from pybricks.pupdevices import Motor, ColorDistanceSensor\n';
+	code += 'from pybricks.parameters import Button, Color, Direction, Port, Side, Stop\n';
+	code += 'from pybricks.robotics import DriveBase\n';
+	code += 'from pybricks.tools import wait, StopWatch\n';
     return code;
 };
 
-Blockly.Python['DriveBit_init'] = function(block) {
-    var variable_robot = Blockly.Python.variableDB_.getName(block.getFieldValue('robot'), Blockly.Variables.NAME_TYPE);
-    // TODO: Assemble Python into code variable.
-    var code = variable_robot + ' = DriveBit()\n';
+Blockly.Python['Hub_init'] = function(block) {
+	var code = '';
     return code;
   };
 
-  Blockly.Python['DriveBit_direction'] = function(block) {
-    var variable_robot = Blockly.Python.variableDB_.getName(block.getFieldValue('robot'), Blockly.Variables.NAME_TYPE);
-    var dropdown_motor = block.getFieldValue('motor');
-    var dropdown_direction = block.getFieldValue('direction');
-    var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = variable_robot+ '.motor.' +dropdown_motor+ '.' +dropdown_direction+ '(' +value_name+ ')\n';
+Blockly.Python['Motor_init'] = function(block) {
+	var code = '';
     return code;
   };
 
-  Blockly.Python['DriveBit_stop'] = function(block) {
-    var variable_robot = Blockly.Python.variableDB_.getName(block.getFieldValue('robot'), Blockly.Variables.NAME_TYPE);
-    var dropdown_motor = block.getFieldValue('motor');
-    // TODO: Assemble Python into code variable.
-    var code = variable_robot+ '.motor.' +dropdown_motor+ '.stop()\n';
+Blockly.Python['Motor_run'] = function(block) {
+	var code = '';
     return code;
   };
 
-Blockly.Python['sliderinlinerobot'] = function(block) {
-    var text_text = block.getFieldValue('slider');
-    // TODO: Assemble Python into code variable.
-    var code = text_text;
-    // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_ATOMIC];
-};
+
+Blockly.Python['wait'] = function(block) {
+	var code = 'wait(1000);';
+    return code;
+  };
